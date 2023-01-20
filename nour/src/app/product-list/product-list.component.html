@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container">
+<!--  <div class="row">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+        <select class="form-control" (change)="filterCategory($event)">
+          <option value="all" >All</option>
+          <option value="{{option}}" *ngFor="let option of category" >{{option}}</option>
+
+        </select>
+        <a class="navbar-brand" href="#">Search for the product you want </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="px-3 mb-2 d-flex justify-content-between align-items-center" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #searchInput >
+            <button class="btn btn-outline-success" type="button" (click)="searchProduct(searchInput.value)" >Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>-->
+  <!--<div class="d-flex  align-items-center">
+    <label class="my-1">Category</label>
+    <select class="form-control" (change)="filterCategory($event)">
+      <option value="all" >All</option>
+      <option value="{{option}}" *ngFor="let option of category" >{{option}}</option>
+
+    </select>
+    &lt;!&ndash;<form class="form-inline my-2 my-lg-0 test">
+      <input class="form-control mr-sm-2 " type="search" [(ngModel)]="word" name="word" (ngModelChange)="chercher()" placeholder="Search" )]>
+    </form>&ndash;&gt;
+    <div class="ml-auto">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search"  placeholder="Chercher"  aria-label="Search" #searchInput>
+        <button class="btn btn-outline-success" type="button" (click)="searchProduct(searchInput.value)" >Search</button>
+      </form>
+    </div>
+
+  </div>-->
+
+  <div class="d-flex align-items-center mt-3">
+    <label class="my-1 mr-3">Category</label>
+    <select class="form-control w-25 mr-3 mx-3" (change)="filterCategory($event)">
+      <option value="all" >All</option>
+      <option value="{{option}}" *ngFor="let option of category" >{{option}}</option>
+    </select>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2 mx-10" type="search"  placeholder="Chercher" [(ngModel)]="word"  name="word" (ngModelChange)="chercher()" aria-label="Search" #searchInput>
+      <button class="btn btn-outline-success " type="button" (click)="searchProduct(searchInput.value)" >Search</button>
+    </form>
+  </div>
+
+
+
+
+
+  <div class="row">
+    <div class="col-3" *ngFor="let product of products">
+      <app-product-items [product]="product"></app-product-items>
+    </div>
+  </div>
+</div>

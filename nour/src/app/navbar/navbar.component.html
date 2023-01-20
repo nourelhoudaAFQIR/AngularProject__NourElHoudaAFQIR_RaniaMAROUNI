@@ -1,0 +1,78 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Your Car is your Style</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/catalog">Catalog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/commands"><h3>History</h3></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/cart">Cart</a>
+      </li>
+    </ul>
+    <form class="d-flex" *ngIf="isUserConnected()">
+      <button class="btn">
+        <h3>
+          <i class="fas fa-user">{{getUserEmail()}}</i>
+        </h3>
+      </button>
+      <button class="btn" (click)="logout()">
+        <h3>
+          <i class="fas fa-sign-out">Logout</i>
+        </h3>
+      </button>
+    </form>
+    <form class="d-flex" *ngIf="!isUserConnected()">
+      <button class="btn" >
+        <h3>
+          <i class="fas fa-user" routerLink="/login">Login</i>
+        </h3>
+      </button>
+    </form>
+  </div>
+</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand mx-4" href="#">Shop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link " routerLink="/catalog" >Catalog</a>
+      <a class="nav-item nav-link" routerLink="/cart">Carts</a>
+      <!--      <a class="nav-item nav-link" routerLink="/details">Details</a>-->
+
+      <a class="nav-item nav-link" routerLink="/commands">History</a>
+      <div *ngIf="isUserConnected()">
+
+            <a class="  mx-3">{{getUserEmail()}}</a>
+        <button class="btn btn-danger   mx-3" (click)="logout()">
+
+            Logout
+
+        </button>
+      </div>
+      <!--<form class="d-flex" *ngIf="!isUserConnected()">
+        <button class="btn" >
+          <h3>
+            <i class="fas fa-user" routerLink="/login">Login</i>
+          </h3>
+        </button>
+      </form>-->
+      <!--<div class="col-md-12">
+        <button class="btn btn-danger float-right" (click)="logout()">Logout</button>
+      </div>-->
+    </div>
+  </div>
+</nav>

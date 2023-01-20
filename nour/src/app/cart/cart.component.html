@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Thumbnail</th>
+    <th scope="col">Name</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let productCommand of productCommands; let i = index">
+    <th scope="row">1</th>
+    <td><img src="{{productCommand.product.thumbnail}}" height="50px" width="50px" class="img-fluid rounded-circle" alt="img"> </td>
+    <td>{{productCommand.product.title}}</td>
+    <td><input type="number" class="form-control w-25" [ngModel]="productCommand.quantity"
+               (ngModelChange)="productCommand.quantity = $event; saveModificationsToCart()"></td>
+    <td><button class="btn btn-danger"(click)="removeFromCart(productCommand.product)">Remove</button></td>
+  </tr>
+  <tr>
+    <td><b>Total:</b></td>
+    <td></td>
+    <td></td>
+    <td><b>${{getTotalPrice()}}</b></td>
+    <td><button class="btn btn-primary" (click)="validateCommand()">Validate</button></td>
+  </tr>
+  </tbody>
+</table>

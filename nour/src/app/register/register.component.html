@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="row text-center">
+    <h1>Register</h1>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-5">
+      <div class="body" *ngIf="user">
+        <form (ngSubmit)="userRegister()">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.fullName">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="user.phoneNumber">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="cpassword" name="cpassword" [(ngModel)]="user.cpassword" >
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Register</button>
+
+          <!-- Register  -->
+          <div class="text-center">
+            <p>Already a member? <a href="/login">Login</a></p>
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-google"></i>
+            </button>
+
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" class="btn btn-link btn-floating mx-1">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

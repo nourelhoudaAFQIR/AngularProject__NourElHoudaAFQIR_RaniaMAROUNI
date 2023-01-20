@@ -1,0 +1,26 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-10">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Total price</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let command of commands">
+          <td>{{command.id}}</td>
+          <td>{{command.date | date:'yyyy-MM-dd HH:mm'}}</td>
+          <td>${{command.totalPrice}}</td>
+          <td routerLink="/commands/{{command.id}}"><button class="btn btn-primary">Details</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
